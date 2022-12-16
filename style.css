@@ -1,0 +1,186 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    cursor: default;
+}
+
+.salutationContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.salutationTextContainer {
+    flex: 3;
+    text-align: center;
+}
+
+.salutationText {
+    font-size: 20vw;
+}
+
+.salutationImgContainer {
+    flex: 1;
+    text-align: center;
+    font-size: 15vw;
+}
+
+.wave {
+    animation-name: wave-animation;
+    /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;
+    /* Change to speed up or slow down */
+    animation-iteration-count: infinite;
+    /* Never stop waving :) */
+    transform-origin: 70% 70%;
+    /* Pivot around the bottom-left palm */
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(0.0deg)
+    }
+
+    /* Reset for the last half to pause */
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
+
+.profileContainer {
+    height: 100vh;
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.nameContainer {
+    font-size: 10vw;
+    flex: 3;
+}
+
+.profilePicContainer {
+    flex: 1;
+}
+
+.profilePic {
+    height: 22vw;
+    width: 22vw;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.jobDescriptionContainer {
+    height: 100vh;
+    background-color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 5vw;
+}
+
+.jobTitleContainer {
+    flex: 3;
+    font-size: 8vw;
+    text-align: center;
+}
+
+.skillsContainer {
+    flex: 1;
+    display: flex;
+    gap: 4vw;
+}
+
+.skill {
+    height: 15vw;
+    width: 15vw;
+}
+
+.projectDetails {
+    height: 100vh;
+    background-color: tomato;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vw;
+    overflow: hidden;
+}
+
+.projectsTitle {
+    font-size: 5vw;
+}
+
+.project {
+    display: flex;
+}
+
+.projectName {
+    font-size: 5vw;
+}
+
+.projectDesc {
+    font-size: 4vw;
+}
+
+.laptopScreen {
+    width: 30vw;
+}
+
+.laptop .laptop-inner {
+    display: inline-block;
+    height: 85%;
+    left: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 48%;
+    -web-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 77%;
+}
+
+.laptop .laptop-inner img {
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -ms-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    -webkit-transition: 5s ease-in-out;
+    -o-transition: 5s ease-in-out;
+    transition: 5s ease-in-out;
+    width: 100%
+}
