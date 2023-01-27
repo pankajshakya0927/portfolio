@@ -5,11 +5,83 @@
     cursor: default;
 }
 
+.mg-3 {
+    margin: 3rem;
+}
+
+.mg-t1 {
+    margin-top: 1rem;
+}
+
+a {
+    font-weight: 700;
+    line-height: 1.5;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 0 #FFFF00;
+    cursor: pointer;
+    color: #000;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    font-size: 2rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+a:hover {
+    box-shadow: inset 20vw 0 0 0 #FFFF00;
+    /* color: white; */
+}
+
+ul.horizontal-list {
+    list-style: none;
+}
+
+ul.horizontal-list li {
+    display: inline-block;
+    padding: 0 0.5rem;
+    text-align: center;
+    font-size: 2vw;
+}
+
+ul.horizontal-list li:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.navMenu a {
+    font-size: 3vw;
+    font-weight: 500;
+    margin: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+#clouds {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 .salutationContainer {
     height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
+    background-image: linear-gradient(to left, #bff098, #8cf0b8, #61ebd9, #53e2f2, #6fd6ff);
 }
 
 .salutationTextContainer {
@@ -77,10 +149,10 @@
 
 .profileContainer {
     height: 100vh;
-    background-color: blueviolet;
     display: flex;
     align-items: center;
     overflow: hidden;
+    background-image: linear-gradient(to right bottom, #4e65ff, #0093ff, #00b7ff, #20d5ff, #92effd);
 }
 
 .nameContainer {
@@ -101,21 +173,71 @@
 
 .jobDescriptionContainer {
     height: 100vh;
-    background-color: yellowgreen;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    padding: 5vw;
+    padding: 10vw;
+    background-image: linear-gradient(to top, #ea8d8d, #ef85a3, #e981bf, #d485df, #a890fe);
 }
 
 .jobTitleContainer {
     flex: 3;
-    font-size: 8vw;
     text-align: center;
 }
 
+.jobTitle {
+    font-size: 12vw;
+}
+
+.reveal {
+    opacity: 0;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.active.fade-left {
+    animation: fade-left 1s ease-in;
+}
+
+.active.fade-right {
+    animation: fade-right 1s ease-in;
+}
+
+@keyframes fade-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 .skillsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vw;
+}
+
+.skills {
     flex: 1;
     display: flex;
     gap: 4vw;
@@ -126,14 +248,18 @@
     width: 15vw;
 }
 
-.projectDetails {
-    height: 100vh;
-    background-color: tomato;
+.projectsContainer {
+    background-image: linear-gradient(to left bottom, #009245, #50ac3f, #86c435, #bfda28, #fcee21);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 5vw;
-    overflow: hidden;
+    gap: 5rem;
+}
+
+.projectDetails {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
 }
 
 .projectsTitle {
@@ -152,35 +278,33 @@
     font-size: 4vw;
 }
 
-.laptopScreen {
-    width: 30vw;
-}
-
-.laptop .laptop-inner {
-    display: inline-block;
-    height: 85%;
-    left: 50%;
+.projectPreview {
+    position: relative;
+    width: 100%;
     overflow: hidden;
-    position: absolute;
-    top: 48%;
-    -web-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 77%;
 }
 
-.laptop .laptop-inner img {
-    display: block;
-    left: 0;
+.laptop-mockup {
+    width: 40vw;
+}
+
+.responsive-iframe {
     position: absolute;
     top: 0;
-    -webkit-transform: translate3d(0px, 0px, 0px);
-    -ms-transform: translate3d(0px, 0px, 0px);
-    -o-transform: translate3d(0px, 0px, 0px);
-    transform: translate3d(0px, 0px, 0px);
-    -webkit-transition: 5s ease-in-out;
-    -o-transition: 5s ease-in-out;
-    transition: 5s ease-in-out;
-    width: 100%
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contactContainer {
+    background-image: linear-gradient(to top, #764ba2, #7657b4, #7364c6, #6e71d8, #667eea);
+}
+
+.contactText {
+    flex: 3;
+    text-align: center;
+    font-size: 7vw;
 }
