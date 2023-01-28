@@ -2,7 +2,6 @@ const salutationTextContainer = document.querySelector(".salutationTextContainer
 const salutationImgContainer = document.querySelector(".salutationImgContainer");
 const jobTitleContainer = document.querySelector(".jobTitleContainer");
 const skillsContainer = document.querySelector(".skillsContainer");
-const projectsTitle = document.querySelector(".projectsTitle");
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
@@ -11,7 +10,6 @@ window.addEventListener("scroll", () => {
     salutationImgContainer.style.transform = `translateY(${offsetY * 0.5}px)`;
     jobTitleContainer.style.transform = `translateY(calc(190vh - ${offsetY}px))`;
     skillsContainer.style.transform = `translateX(calc(250vh - ${offsetY}px))`;
-    projectsTitle.style.transform = `translateX(calc(-315vh + ${offsetY}px))`;
 
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
