@@ -13,6 +13,14 @@
     margin-top: 1rem;
 }
 
+.mg-t3 {
+    margin-top: 3rem;
+}
+
+.mg-t5 {
+    margin-top: 5rem;
+}
+
 a {
     font-weight: 700;
     line-height: 1.5;
@@ -55,11 +63,11 @@ ul.horizontal-list li:not(:last-child) {
     top: 0;
     z-index: 100;
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
 
 .navMenu a {
-    font-size: 3vw;
+    font-size: 2.5vw;
     font-weight: 500;
     margin: 1rem;
     display: inline-block;

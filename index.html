@@ -13,10 +13,10 @@
 <body>
     <header class="header">
         <nav class="navMenu">
-            <a href="#"=>About</a>
-            <a href="#">Experience</a>
-            <a href="#">Work</a>
-            <a href="#">Contact</a>
+            <a onclick="scrollToView('.profileContainer')">About Me</a>
+            <a onclick="scrollToView('.jobDescriptionContainer')">Experience</a>
+            <a onclick="scrollToView('.projectsContainer')">Work</a>
+            <a onclick="scrollToView('.contactContainer')">Contact</a>
         </nav>
     </header>
     <!-- <video autoplay muted loop id="clouds">
@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="profileContainer">
-                <div class="nameContainer reveal fade-left mg-3">
+                <div class="nameContainer reveal fade-left mg-3 mg-t5">
                     <h2 class="name">I'm Pankaj</h2>
                 </div>
                 <div class="profilePicContainer reveal fade-right mg-3">
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="projectsContainer">
-            <div class="projectDetails">
+            <div class="projectDetails mg-t5">
                 <div class="projectsTitle">Here are some things I've built...</div>
                 <div class="project mg-3">
                     <div class="reveal fade-left">
