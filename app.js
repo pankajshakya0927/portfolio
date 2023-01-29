@@ -8,13 +8,19 @@ window.addEventListener("scroll", () => {
     let offsetY = window.scrollY;
     salutationTextContainer.style.transform = `translateY(${offsetY * 0.5}px)`;
     salutationImgContainer.style.transform = `translateY(${offsetY * 0.5}px)`;
-    jobTitleContainer.style.transform = `translateY(calc(190vh - ${offsetY}px))`;
-    skillsContainer.style.transform = `translateX(calc(250vh - ${offsetY}px))`;
+    jobTitleContainer.style.transform = `translateY(calc(200vh - ${offsetY}px))`;
+    
+    if (offsetY >= 1345) {
+        skillsContainer.className = "skillsContainer show";
+    } else {
+        skillsContainer.className = "skillsContainer hide";
+    }
+    skillsContainer.style.transform = `translateX(calc(200vh - ${offsetY}px))`;
 
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
         const elementTop = reveals[i].getBoundingClientRect().top;
-        const elementVisible = 150;
+        const elementVisible = 100;
       
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active");
