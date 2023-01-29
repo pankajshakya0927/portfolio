@@ -6,11 +6,16 @@ const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
     let offsetY = window.scrollY;
+    let docHeight = document.body.offsetHeight;
+    let winHeight = window.innerHeight;
+    let scrollPercent = offsetY / (docHeight - winHeight);
+    let scrollPercentRounded = Math.round(scrollPercent * 100);
+    
     salutationTextContainer.style.transform = `translateY(${offsetY * 0.5}px)`;
     salutationImgContainer.style.transform = `translateY(${offsetY * 0.5}px)`;
     jobTitleContainer.style.transform = `translateY(calc(200vh - ${offsetY}px))`;
-    
-    if (offsetY >= 1345) {
+
+    if (scrollPercentRounded >= 38) {
         skillsContainer.className = "skillsContainer show";
     } else {
         skillsContainer.className = "skillsContainer hide";
