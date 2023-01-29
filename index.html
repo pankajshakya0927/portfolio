@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pankaj's Portfolio">
     <title>Pankaj's Portfolio</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +15,10 @@
 <body>
     <header class="header">
         <nav class="navMenu">
-            <a onclick="scrollToView('.profileContainer')">About Me</a>
-            <a onclick="scrollToView('.jobDescriptionContainer')">Experience</a>
-            <a onclick="scrollToView('.projectsContainer')">Work</a>
-            <a onclick="scrollToView('.contactContainer')">Contact</a>
+            <a href="javascript:void(0)" onclick="scrollToView('.profileContainer')">About Me</a>
+            <a href="javascript:void(0)" onclick="scrollToView('.jobDescriptionContainer')">Experience</a>
+            <a href="javascript:void(0)" onclick="scrollToView('.projectsContainer')">Work</a>
+            <a href="javascript:void(0)" onclick="scrollToView('.contactContainer')">Contact</a>
         </nav>
     </header>
     <!-- <video autoplay muted loop id="clouds">
@@ -37,7 +39,7 @@
             <div class="profileContainer">
                 <div class="nameContainer reveal fade-left mg-4">
                     <h1 class="font-13">I'm Pankaj</h1>
-                    <p class="font-3 reveal fade-right">I build things for the web.</p>
+                    <p class="font-4 reveal fade-right">I build things for the web.</p>
                 </div>
                 <div class="profilePicContainer reveal fade-right mg-4">
                     <img src="./src/images/profile.jpg" alt="" class="profilePic">
@@ -46,14 +48,14 @@
 
             <div class="jobDescriptionContainer">
                 <div class="jobTitleContainer">
-                    <h2 class="heading-text font-6">I'm a Fullstack Javascript Developer</h2>
+                    <h2 class="heading-text font-6">I'm a Fullstack Developer</h2>
                     <div class="reveal fade-right">
-                        <h1 class="font-2">based in New Delhi, India</h1>
+                        <h1 class="font-3">based in New Delhi, India</h1>
                     </div>
                 </div>
                 <div class="skillsContainer">
                     <div class="reveal fade-left">
-                        <p class="font-2">with 4+ years of experience working in</p>
+                        <p class="font-3">with 4+ years of experience working in</p>
                     </div>
                     <div class="skills">
                         <div class="card">
@@ -84,16 +86,18 @@
                             <h2>Budget Manager</h2>
                         </div>
                         <a class="font-3" href="https://mybudgetmanager.up.railway.app/">View Project</a>
-                        <div class="font-2">
-                            A web app to manage your finances in simplest way
-                        </div>
-                        <div class="mg-t1">
-                            <ul class="horizontal-list">
-                                <li>Angular</li>
-                                <li>Node</li>
-                                <li>Express</li>
-                                <li>Mongodb</li>
-                            </ul>
+                        <div class="card-1 mg-t1">
+                            <div class="font-3">
+                                A web app to manage your finances in simplest way
+                            </div>
+                            <div class="mg-t1">
+                                <ul class="horizontal-list font-2">
+                                    <li>Angular</li>
+                                    <li>Node</li>
+                                    <li>Express</li>
+                                    <li>Mongodb</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="projectPreview reveal fade-right">
@@ -107,17 +111,19 @@
                         <div class="font-4">
                             <h2>TextMe</h2>
                         </div>
-                        <a class="font-3" href="#">View Project</a>
-                        <div class="font-2">
-                            A web app to chat with your friends
-                        </div>
-                        <div class="mg-t1">
-                            <ul class="horizontal-list">
-                                <li>React</li>
-                                <li>Node</li>
-                                <li>Express</li>
-                                <li>Mongodb</li>
-                            </ul>
+                        <a href="#" class="font-3">View Project</a>
+                        <div class="card-1 mg-t1">
+                            <div class="font-3">
+                                A web app to chat with your friends
+                            </div>
+                            <div class="mg-t1">
+                                <ul class="horizontal-list font-2">
+                                    <li>React</li>
+                                    <li>Node</li>
+                                    <li>Express</li>
+                                    <li>Mongodb</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <!-- <div class="projectPreview">
