@@ -363,6 +363,7 @@ ul.horizontal-list li:not(:last-child) {
 .projectsContainer {
     display: flex;
     flex-direction: column;
+    gap: 5vh;
     /* background-image: linear-gradient(to left bottom, #009245, #50ac3f, #86c435, #bfda28, #fcee21); */
 }
 
@@ -458,7 +459,6 @@ input[type=submit]:hover {
     .salutationContainer,
     .profileContainer,
     .jobDescriptionContainer,
-    .projectDetails,
     .contactContainer {
         height: 100vh;
     }
@@ -467,36 +467,44 @@ input[type=submit]:hover {
     .heading-text {
         margin: 5rem 2rem 2rem 2rem;
     }
+
+    .project {
+        margin: 0 4vw;
+    }
 }
 
 /* For Tablet View */
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
 
     .salutationContainer,
-    .nameContainer,
-    .profilePicContainer,
     .jobTitleContainer,
+    .nameContainer,
     .heading-text,
     .contactContainer {
-        margin: 6rem 2rem 2rem 2rem;
+        margin: 5rem 2rem 1rem 2rem;
     }
 
     .profileContainer {
         flex-direction: column;
+        margin-top: 5rem;
+    }
+
+    .project {
+        margin: 0 2rem;
     }
 }
 
 @media screen and (max-device-width: 768px) {
 
     .salutationContainer,
-    .nameContainer,
-    .profilePicContainer,
     .jobTitleContainer,
+    .nameContainer,
     .heading-text,
     .contactContainer {
-        margin: 6rem 2rem 2rem 2rem;
+        margin: 5rem 2rem 1rem 2rem;
     }
 
+    .salutationContainer,
     .profileContainer {
         flex-direction: column;
     }
