@@ -13,14 +13,14 @@ window.addEventListener("scroll", () => {
     
     salutationTextContainer.style.transform = `translateY(${offsetY * 0.5}px)`;
     salutationImgContainer.style.transform = `translateY(${offsetY * 0.5}px)`;
-    jobTitleContainer.style.transform = `translateY(calc(200vh - ${offsetY}px))`;
+    // jobTitleContainer.style.transform = `translateY(calc(200vh - ${offsetY}px))`;
 
-    if (scrollPercentRounded >= 38) {
-        skillsContainer.className = "skillsContainer show";
-    } else {
-        skillsContainer.className = "skillsContainer hide";
-    }
-    skillsContainer.style.transform = `translateX(calc(200vh - ${offsetY}px))`;
+    // if (scrollPercentRounded >= 38) {
+    //     skillsContainer.className = "skillsContainer show";
+    // } else {
+    //     skillsContainer.className = "skillsContainer hide";
+    // }
+    // skillsContainer.style.transform = `translateX(calc(200vh - ${offsetY}px))`;
 
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight;
