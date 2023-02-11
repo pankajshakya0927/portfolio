@@ -10,6 +10,10 @@ body {
     color: #fff;
 }
 
+.green {
+    color: #01FF00;
+}
+
 .mg-4 {
     margin: 4vw;
 }
@@ -24,6 +28,10 @@ body {
 
 .mg-t5 {
     margin-top: 5rem;
+}
+
+.mg-lr5 {
+    margin: 0 5vw;
 }
 
 .font-2 {
@@ -67,7 +75,7 @@ body {
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: #fff;
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
 .container {
@@ -87,7 +95,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #01FF00 !important;
 }
 
 a:link,
@@ -107,15 +115,15 @@ ul.horizontal-list li {
 }
 
 ul.horizontal-list li:not(:last-child) {
-    border-right: 1px solid black;
+    border-right: 1px solid #fff;
 }
 
 .card {
     transition: 0.3s;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 0.5rem;
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 16px;
+    border-radius: 10px;
     border: 1px solid #fff;
 }
 
@@ -125,14 +133,29 @@ ul.horizontal-list li:not(:last-child) {
 }
 
 .card-1 {
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+    padding: 1rem;
     background: rgba(255, 255, 255, 0.2);
 }
 
-.typing {
+[data-inviewport="salutation-typing"].is-inViewport {
     width: 13ch;
     animation: typing 2s steps(13), blink .9s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+}
+
+[data-inviewport="intro-typing"].is-inViewport {
+    width: 28ch;
+    animation: typing 2s steps(28), blink .9s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+}
+
+[data-inviewport="project-typing"].is-inViewport {
+    width: 35ch;
+    animation: typing 3s steps(35), blink .9s step-end infinite;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -262,8 +285,8 @@ ul.horizontal-list li:not(:last-child) {
 }
 
 .skill-img {
-    height: 10vw;
-    width: 10vw;
+    height: 9vw;
+    width: 9vw;
     cursor: pointer;
 }
 
@@ -271,7 +294,7 @@ ul.horizontal-list li:not(:last-child) {
     /* height: 100vh; */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
@@ -279,7 +302,7 @@ ul.horizontal-list li:not(:last-child) {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5vw;
+    margin: 0 5vw;
 }
 
 .projectPreview {
@@ -303,15 +326,19 @@ ul.horizontal-list li:not(:last-child) {
     margin: 3vw;
 }
 
+.contactUsForm {
+    font-size: 1.5vw;
+}
+
 input,
 textarea {
     width: 100%;
-    padding: 12px;
+    padding: 1.2vh;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 12px;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
     resize: vertical;
     outline: none;
 }
@@ -327,16 +354,17 @@ textarea:focus {
 input[type=submit] {
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
     letter-spacing: 2px;
     cursor: pointer;
-    text-transform: uppercase;
-    padding: 1rem;
+    padding: 2vh;
+    width: 40%;
 }
 
 input[type=submit]:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #01FF00;
+    color: #000;
 }
 
 /* For Desktop View */
@@ -344,6 +372,7 @@ input[type=submit]:hover {
     .jobTitleContainer {
         margin-top: 12vh;
     }
+
     .heading-text {
         margin-top: 22vh;
     }
@@ -357,9 +386,11 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 768px) {
+
     .profileContainer,
     .project {
         flex-direction: column;
+        margin: 5vh;
     }
 
     .skills {
