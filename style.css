@@ -134,7 +134,9 @@ ul.horizontal-list li:not(:last-child) {
 
 .card-1 {
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.2);
+    /* background: rgba(255, 255, 255, 0.2); */
+    border: 1px solid #01FF00;
+    border-radius: 1rem;
 }
 
 [data-inviewport="salutation-typing"].is-inViewport {
@@ -156,6 +158,14 @@ ul.horizontal-list li:not(:last-child) {
 [data-inviewport="project-typing"].is-inViewport {
     width: 35ch;
     animation: typing 3s steps(35), blink .9s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+}
+
+[data-inviewport="from-typing"].is-inViewport {
+    width: 26ch;
+    animation: typing 2s steps(26), blink .9s step-end infinite;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -253,10 +263,23 @@ ul.horizontal-list li:not(:last-child) {
 }
 
 .profilePic {
-    height: 28vw;
-    width: 28vw;
+    height: 20vw;
+    width: 20vw;
     border-radius: 50%;
+    border: 1px solid #01FF00;
     display: inline-block;
+}
+
+img.grayscale {
+    filter: gray;
+    /* IE6-9 */
+    -webkit-filter: grayscale(100%);
+    /* Chrome 19+ & Safari 6+ */
+}
+
+img.grayscale:hover {
+    filter: none;
+    -webkit-filter: grayscale(0%);
 }
 
 .jobDescriptionContainer {
