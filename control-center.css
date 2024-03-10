@@ -1,0 +1,212 @@
+.control-center {
+    width: 300px;
+    background-color: #f5f5f5;
+    /* Light mode background color */
+    color: #333;
+    /* Light mode text color */
+    position: fixed;
+    right: 0;
+    margin: 10px;
+    transition: top 0.3s ease-in-out;
+    border-left: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Adding shadow */
+    z-index: 1000;
+    border-radius: 15px;
+    /* Curved border for all sides */
+    border-bottom: 1px solid #ccc;
+    /* Add border at the bottom */
+    top: -100%;
+    /* Initially hidden above the header */
+}
+
+.control-center-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.control-center title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.control {
+    display: flex;
+    flex-direction: column;
+    /* Display icons above text */
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.control:hover {
+    background-color: #ccc;
+    cursor: pointer;
+    /* Change background color on hover */
+}
+
+.control i {
+    font-size: 24px;
+    /* Adjust icon size */
+    margin-bottom: 5px;
+    /* Add margin between icon and text */
+    cursor: pointer;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.control {
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #ddd;
+    cursor: pointer;
+    /* Adding pointer cursor */
+}
+
+.control:hover {
+    background-color: #ccc;
+    /* Change background color on hover */
+}
+
+.control img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.control span {
+    cursor: pointer;
+    /* Adding pointer cursor */
+}
+
+.brightness {
+    padding: 20px 10px;
+    /* Increase padding for better spacing */
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+    /* Add border at the top */
+}
+
+.slider-label {
+    display: block;
+    margin-bottom: 10px;
+    /* Adjust spacing */
+    font-size: 14px;
+}
+
+.slider {
+    width: 100%;
+    /* Full width */
+    height: 20px;
+    /* Adjust slider height */
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #007bff 0%, #007bff 50%, #ddd 50%, #ddd 100%);
+    /* Use linear gradient to show progress */
+    border-radius: 10px;
+    /* Rounded corners */
+    outline: none;
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Remove default padding */
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    /* Adjust thumb size */
+    height: 20px;
+    /* Adjust thumb size */
+    background: #007bff;
+    /* Thumb color */
+    border-radius: 50%;
+    /* Circular shape */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Add shadow */
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    /* Adjust thumb size */
+    height: 20px;
+    /* Adjust thumb size */
+    background: #007bff;
+    /* Thumb color */
+    border-radius: 50%;
+    /* Circular shape */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Add shadow */
+}
+
+
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Adding shadow */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 576px) {
+    .control-center {
+        /* width: calc(100% - 20px); */
+        /* Full width with 10px margins on each side */
+        margin: 10px;
+        /* Add margins */
+        border-left: none;
+        /* Remove border on the left */
+        border-right: none;
+        /* Remove border on the right */
+        font-size: 12px;
+        /* Adjust font size */
+        width: 50%;
+        /* Set a percentage-based width */
+    }
+
+    .control-center .controls {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        /* Adjust grid size */
+    }
+
+    .control-center .controls .control i {
+        font-size: 15px;
+        /* Adjust icon size */
+    }
+
+    .slider {
+        height: 10px;
+        /* Adjust slider thickness */
+    }
+}

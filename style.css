@@ -195,6 +195,9 @@ ul.horizontal-list li:not(:last-child) {
     backdrop-filter: blur(10px);
     box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
     background: #36454f;
+    position: fixed;
+    z-index: 1001;
+    /* Ensure header is above control center */
 }
 
 .navBtns {
@@ -350,7 +353,7 @@ img.grayscale:hover {
 }
 
 .contactUsForm {
-    font-size: 1.5vw;
+    font-size: 2vw;
 }
 
 input,
@@ -390,6 +393,10 @@ input[type=submit]:hover {
     color: #000;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 /* For Desktop View */
 @media screen and (min-width: 1024px) {
     .jobTitleContainer {
@@ -409,7 +416,6 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 768px) {
-
     .profileContainer,
     .project {
         flex-direction: column;
@@ -420,9 +426,11 @@ input[type=submit]:hover {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .contactUs {
-        width: 60%;
-    }
+    /* Adjust button size and font size for smaller screens */
+    input[type="submit"] {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+      }
 }
 
 /* For Mobile Portrait View */
@@ -433,3 +441,6 @@ input[type=submit]:hover {
 
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-width: 640px) {}
+
+/* Default styles for the submit button */
+  

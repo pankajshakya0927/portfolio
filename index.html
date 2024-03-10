@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./control-center.css">
 </head>
 
 <body>
@@ -21,16 +23,44 @@
             <div class="mac-btn max-btn"></div>
         </div>
         <nav class="navMenu">
-            <a href="javascript:void(0)" onclick="scrollToView('.profileContainer')">About Me</a>
+            <!-- <a href="javascript:void(0)" onclick="scrollToView('.profileContainer')">About Me</a>
             <a href="javascript:void(0)" onclick="scrollToView('.jobDescriptionContainer')">Experience</a>
             <a href="javascript:void(0)" onclick="scrollToView('.projectDetails')">Work</a>
-            <a href="javascript:void(0)" onclick="scrollToView('.contactContainer')">Contact</a>
+            <a href="javascript:void(0)" onclick="scrollToView('.contactContainer')">Contact</a> -->
+            <a href="javascript:void(0)" onclick="toggleControlCenter()">
+                <i class="fas fa-bars cursor-pointer"></i>
+            </a>        
         </nav>
     </header>
-    <!-- <video autoplay muted loop id="clouds">
-        <source src="/src/images/sky.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video> -->
+
+    <div class="control-center" id="control-center">
+        <div class="control-center-header">
+            <div id="timer"></div>
+        </div>
+        <div class="controls">
+            <div class="control" onclick="scrollToView('.profileContainer')">
+                <i class="fas fa-user"></i>
+                <span>About Me</span>
+            </div>
+            <div class="control" onclick="scrollToView('.jobDescriptionContainer')">
+                <i class="fas fa-briefcase"></i>
+                <span>Experience</span>
+            </div>
+            <div class="control" onclick="scrollToView('.projectDetails')">
+                <i class="fas fa-laptop-code"></i>
+                <span>Work</span>
+            </div>
+            <div class="control" onclick="scrollToView('.contactContainer')">
+                <i class="fas fa-phone"></i>
+                <span>Contact</span>
+            </div>
+        </div>
+        <div class="brightness">
+            <label class="slider-label">Display</label>
+            <input type="range" min="0" max="100" value="50" class="slider" id="brightness-slider">
+        </div>
+    </div>
+
     <div class="container">
         <section class="salutationContainer">
             <div class="salutationText green">
@@ -55,7 +85,7 @@
                 <h2 class="font-2 green" data-inviewport="from-typing">>based in New Delhi, India</h2>
             </div>
             <div class="skillsContainer">
-                <h2 class="font-3">With 4+ years of experience in Web Development</h2>
+                <h2 class="font-3">With 5+ years of experience in Web Development</h2>
                 <div class="skills">
                     <div class="card">
                         <img src="./src/images/angular.png" alt="Angular" class="skill-img">
@@ -131,7 +161,7 @@
             <div class="project">
                 <div class="projectDesc">
                     <div class="font-3">
-                        <h2><a href="https://todolist.up.railway.app//">Todo List</a></h2>
+                        <h2><a href="https://mytodolist.up.railway.app/">Todo List</a></h2>
                     </div>
                     <div class="card-1 mg-t1">
                         <div class="font-2">
