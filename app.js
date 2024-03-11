@@ -61,7 +61,7 @@ const sliderValue = document.getElementById('brightness-value');
 slider.addEventListener('input', () => {
     // Update the displayed value with the current slider value
     const value = slider.value;
-    const gradient = `linear-gradient(to right, #007bff 0%, #007bff ${value}%, #ddd ${value}%, #ddd 100%)`;
+    const gradient = `linear-gradient(to right, #01FF00 0%, #01FF00 ${value}%, #ddd ${value}%, #ddd 100%)`;
     slider.style.background = gradient;
     const brightnessValue = slider.value;
     document.documentElement.style.filter = `brightness(${brightnessValue}%)`;

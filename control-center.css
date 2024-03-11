@@ -1,20 +1,20 @@
 .control-center {
     width: 300px;
-    background-color: #f5f5f5;
-    /* Light mode background color */
-    color: #333;
-    /* Light mode text color */
+    background-color: #262A2B;
+    /* Dark mode background color */
+    color: #fff;
+    /* Dark mode text color */
     position: fixed;
     right: 0;
     margin: 10px;
     transition: top 0.3s ease-in-out;
-    border-left: 1px solid #ccc;
+    border-left: 1px solid rgb(62, 68, 70);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* Adding shadow */
     z-index: 1000;
     border-radius: 15px;
     /* Curved border for all sides */
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgb(62, 68, 70);
     /* Add border at the bottom */
     top: -100%;
     /* Initially hidden above the header */
@@ -25,7 +25,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgb(62, 68, 70);
 }
 
 .control-center title {
@@ -42,8 +42,10 @@
     box-sizing: border-box;
     text-align: center;
     border-radius: 8px;
-    background-color: #ddd;
+    background-color: #444;
+    /* Dark mode control background color */
     cursor: pointer;
+    color: #01FF00;
 }
 
 .control:hover {
@@ -58,6 +60,7 @@
     margin-bottom: 5px;
     /* Add margin between icon and text */
     cursor: pointer;
+    color: #01FF00; /* Adjust icon color for better visibility */
 }
 
 .controls {
@@ -67,18 +70,8 @@
     padding: 10px;
 }
 
-.control {
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    border-radius: 8px;
-    background-color: #ddd;
-    cursor: pointer;
-    /* Adding pointer cursor */
-}
-
 .control:hover {
-    background-color: #ccc;
+    background-color: #000;
     /* Change background color on hover */
 }
 
@@ -97,8 +90,8 @@
     padding: 20px 10px;
     /* Increase padding for better spacing */
     box-sizing: border-box;
-    border-top: 1px solid #ccc;
-    /* Add border at the top */
+    border-top: 1px solid #666;
+    /* Dark mode border color */
 }
 
 .slider-label {
@@ -106,6 +99,8 @@
     margin-bottom: 10px;
     /* Adjust spacing */
     font-size: 14px;
+    color: #ccc;
+    /* Dark mode label color */
 }
 
 .slider {
@@ -115,8 +110,8 @@
     /* Adjust slider height */
     -webkit-appearance: none;
     appearance: none;
-    background: linear-gradient(to right, #007bff 0%, #007bff 50%, #ddd 50%, #ddd 100%);
-    /* Use linear gradient to show progress */
+    background: linear-gradient(to right, #01FF00 0%, #01FF00 50%, #444 50%, #444 100%);
+    /* Use dark mode colors for slider gradient */
     border-radius: 10px;
     /* Rounded corners */
     outline: none;
@@ -134,13 +129,15 @@
     /* Adjust thumb size */
     height: 20px;
     /* Adjust thumb size */
-    background: #007bff;
+    background: #01FF00;
     /* Thumb color */
     border-radius: 50%;
     /* Circular shape */
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     /* Add shadow */
+    background: #01FF00;
+    /* Dark mode thumb color */
 }
 
 .slider::-moz-range-thumb {
@@ -148,13 +145,13 @@
     /* Adjust thumb size */
     height: 20px;
     /* Adjust thumb size */
-    background: #007bff;
-    /* Thumb color */
     border-radius: 50%;
     /* Circular shape */
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     /* Add shadow */
+    background: #01FF00;
+    /* Dark mode thumb color */
 }
 
 .hidden {

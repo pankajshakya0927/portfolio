@@ -409,7 +409,7 @@ input[type=submit]:hover {
     }
 
     .heading-text {
-        margin-top: 22vh;
+        margin-top: 20vh;
     }
 }
 
@@ -451,6 +451,9 @@ input[type=submit]:hover {
     }
     .font-3 {
         font-size: 4vw;
+    }
+    .font-4 {
+        font-size: 5vw;
     }
     .profilePic {
         height: 30vw;
