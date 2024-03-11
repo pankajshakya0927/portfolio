@@ -34,7 +34,7 @@ function toggleControlCenter() {
     } else {
         // Open the control center
         controlCenter.style.top = headerHeight + "px"; // Position below header
-        controlCenter.style.height = "calc(50% - " + headerHeight + "px)"; // Adjust height as needed
+        controlCenter.style.height = "calc(60% - " + headerHeight + "px)"; // Adjust height as needed
     }
 }
 
