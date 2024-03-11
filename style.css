@@ -66,6 +66,11 @@ body {
     font-size: 10vw;
 }
 
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+
 /* Overwrite the default to keep the scrollbar always visible */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -204,7 +209,7 @@ ul.horizontal-list li:not(:last-child) {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0.5vw;
+    margin: 1vw;
 }
 
 .mac-btn {
@@ -440,7 +445,31 @@ input[type=submit]:hover {
 @media screen and (max-width: 640px) and (orientation: landscape) {}
 
 /* For Mobile Phones Portrait or Landscape View */
-@media screen and (max-width: 640px) {}
+@media screen and (max-width: 640px) {
+    .font-2 {
+        font-size: 3vw;
+    }
+    .font-3 {
+        font-size: 4vw;
+    }
+    .profilePic {
+        height: 30vw;
+        width: 30vw;
+    }
+    .skillsContainer {
+        gap: 5vw;
+        margin: 5rem;
+    }
+    .laptop-mockup {
+        width: 50vw;
+    }
+    .contactUs {
+        width: 70%;
+    }
+    .contactUsForm {
+        font-size: 3vw;
+    }
+}
 
 /* Default styles for the submit button */
   
