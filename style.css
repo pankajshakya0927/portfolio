@@ -458,7 +458,7 @@ input[type=submit]:hover {
     }
     .skillsContainer {
         gap: 5vw;
-        margin: 5rem;
+        margin: 2rem;
     }
     .laptop-mockup {
         width: 50vw;
