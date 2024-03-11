@@ -25,19 +25,16 @@ window.addEventListener('resize', function () {
 // Function to toggle control center visibility
 function toggleControlCenter() {
     var controlCenter = document.getElementById("control-center");
-    var menuBtn = document.getElementById("menu-btn");
     var headerHeight = document.querySelector("header").offsetHeight;
 
     if (controlCenter.style.top === headerHeight + "px") {
         // Close the control center
         controlCenter.style.top = "-100%";
         controlCenter.style.height = "auto"; // Reset height to auto
-        menuBtn.style.display = "block"; // Show menu button
     } else {
         // Open the control center
         controlCenter.style.top = headerHeight + "px"; // Position below header
         controlCenter.style.height = "calc(50% - " + headerHeight + "px)"; // Adjust height as needed
-        menuBtn.style.display = "none"; // Hide menu button
     }
 }
 

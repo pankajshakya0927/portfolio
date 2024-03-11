@@ -157,23 +157,6 @@
     /* Add shadow */
 }
 
-
-.menu-btn {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1001;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Adding shadow */
-}
-
 .hidden {
     display: none;
 }
