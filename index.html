@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -204,12 +205,12 @@
                     <input type="email" id="email" name="email" placeholder="Your email...">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" placeholder="Your message..." style="height:100px"></textarea>
-                    <input type="submit" value="Send">
+                    <input type="button" value="Send" onclick="sendEmail()">
                 </form>
             </div>
         </section>
     </div>
     <script src="./app.js"></script>
+    <script src="./email.js"></script>
 </body>
-
 </html>
