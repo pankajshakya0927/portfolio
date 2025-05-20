@@ -1,6 +1,6 @@
-const USER_ID = process.env.EMAILJS_USER_ID;
-const SERVICE_ID = process.env.EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = process.env.EMAILJS_TEMPLATE_ID;
+const USER_ID = EMAILJS_CONFIG.USER_ID;
+const SERVICE_ID = EMAILJS_CONFIG.SERVICE_ID;
+const TEMPLATE_ID = EMAILJS_CONFIG.TEMPLATE_ID;
 
 // Initialize EmailJS with your user ID
 emailjs.init(USER_ID);
@@ -11,6 +11,16 @@ function sendEmail() {
     var fromName = document.getElementById('fullname').value;
     var fromEmail = document.getElementById('email').value;
     var message = document.getElementById('message').value;
+
+    if (!fromName.value.trim() || !fromEmail.value.trim() || !message.value.trim()) {
+        alert('Please fill in all fields.');
+        return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(fromEmail.value)) {
+        alert('Please enter a valid email.');
+        return;
+    }
 
     if (fromName && fromEmail && message) {
         const emailParams = {
