@@ -9,7 +9,7 @@ const inViewport = (entries, observer) => {
 };
 
 const Obs = new IntersectionObserver(inViewport);
-const obsOptions = {};
+const obsOptions = { threshold: 0.5 };
 
 // Attach observer to every [data-inviewport] element:
 const ELs_inViewport = document.querySelectorAll('[data-inviewport]');

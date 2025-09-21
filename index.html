@@ -19,54 +19,45 @@
 <body>
     <header class="header">
         <div class="navBtns">
-            <div class="mac-btn close-btn"></div>
-            <div class="mac-btn min-btn"></div>
-            <div class="mac-btn max-btn"></div>
+            <div class="mac-btn close-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="mac-btn min-btn">
+                <i class="fas fa-minus"></i>
+            </div>
+            <div class="mac-btn max-btn">
+                <i class="fas fa-expand-alt"></i>
+            </div>
         </div>
-        <nav class="navMenu">
-            <!-- <a href="javascript:void(0)" onclick="scrollToView('.profileContainer')">About Me</a>
-            <a href="javascript:void(0)" onclick="scrollToView('.jobDescriptionContainer')">Experience</a>
-            <a href="javascript:void(0)" onclick="scrollToView('.projectDetails')">Work</a>
-            <a href="javascript:void(0)" onclick="scrollToView('.contactContainer')">Contact</a> -->
-            <a href="javascript:void(0)" onclick="toggleControlCenter()">
-                <i class="fas fa-bars cursor-pointer"></i>
-            </a>
-        </nav>
     </header>
-
-    <div class="control-center" id="control-center">
-        <div class="control-center-header">
-            <div id="timer"></div>
-        </div>
-        <div class="controls">
-            <div class="control" onclick="scrollToView('.profileContainer')">
-                <i class="fas fa-user"></i>
-                <span>About Me</span>
-            </div>
-            <div class="control" onclick="scrollToView('.jobDescriptionContainer')">
-                <i class="fas fa-briefcase"></i>
-                <span>Experience</span>
-            </div>
-            <div class="control" onclick="scrollToView('.projectDetails')">
-                <i class="fas fa-laptop-code"></i>
-                <span>Work</span>
-            </div>
-            <div class="control" onclick="scrollToView('.contactContainer')">
-                <i class="fas fa-phone"></i>
-                <span>Contact</span>
-            </div>
-        </div>
-        <div class="brightness">
-            <label class="slider-label">Display</label>
-            <input type="range" min="0" max="100" value="50" class="slider" id="brightness-slider">
-        </div>
-    </div>
 
     <div class="container">
         <section class="salutationContainer">
             <div class="salutationText green">
                 <h1 class="font-10">></h1>
                 <h1 class="font-10" data-inviewport="salutation-typing">Hello, World!</h1>
+            </div>
+            <div class="terminal-nav">
+                <div class="command-line first-command">
+                    <span class="prompt-text">portfolio@terminal:~$ </span>
+                    <span class="command clickable" onclick="scrollToView('.profileContainer')">about</span>
+                </div>
+                <div class="command-line">
+                    <span class="continuation-prompt">></span>
+                    <span class="command clickable" onclick="scrollToView('.jobDescriptionContainer')">experience</span>
+                </div>
+                <div class="command-line">
+                    <span class="continuation-prompt">></span>
+                    <span class="command clickable" onclick="scrollToView('.projectDetails')">work</span>
+                </div>
+                <div class="command-line">
+                    <span class="continuation-prompt">></span>
+                    <span class="command clickable" onclick="scrollToView('.contactContainer')">contact</span>
+                </div>
+                <div class="command-line">
+                    <span class="continuation-prompt">></span>
+                    <span class="command clickable" onclick="window.location.href='blog.html'">blog</span>
+                </div>
             </div>
         </section>
 

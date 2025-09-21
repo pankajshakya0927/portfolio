@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pankaj's Blog">
+    <title>Pankaj's Blog</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./control-center.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            color: #fff;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-title {
+            color: #01FF00;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-subtitle {
+            color: #666;
+            font-size: 1.2rem;
+        }
+        
+        .back-link {
+            color: #01FF00;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .blog-post {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .post-title {
+            color: #01FF00;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .post-content {
+            line-height: 1.6;
+            color: #ccc;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .blog-container {
+                padding: 1rem;
+            }
+            
+            .blog-title {
+                font-size: 2.5rem;
+            }
+            
+            .blog-post {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="navBtns">
+            <div class="mac-btn close-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="mac-btn min-btn">
+                <i class="fas fa-minus"></i>
+            </div>
+            <div class="mac-btn max-btn">
+                <i class="fas fa-expand-alt"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="blog-container">
+            <a href="index.html" class="back-link">← Back to Portfolio</a>
+            
+            <div class="blog-header">
+                <h1 class="blog-title">Blog</h1>
+                <p class="blog-subtitle">Thoughts on web development and technology</p>
+            </div>
+
+            <article class="blog-post">
+                <h2 class="post-title">Coming Soon...</h2>
+                <div class="post-date">September 22, 2025</div>
+                <div class="post-content">
+                    <p>This blog is currently under construction. I'll be sharing insights about web development, my project experiences, and thoughts on the latest technologies.</p>
+                    <p>Stay tuned for upcoming posts about:</p>
+                    <ul>
+                        <li>Building scalable web applications</li>
+                        <li>Modern JavaScript frameworks</li>
+                        <li>Backend development best practices</li>
+                        <li>My journey as a fullstack developer</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <h2 class="post-title">Welcome to My Terminal-Style Portfolio</h2>
+                <div class="post-date">September 22, 2025</div>
+                <div class="post-content">
+                    <p>I've always been passionate about creating unique user experiences. This portfolio combines my love for terminal interfaces with modern web design.</p>
+                    <p>The terminal-style navigation isn't just for aesthetics—it reflects how I think about development: command-driven, efficient, and purposeful.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

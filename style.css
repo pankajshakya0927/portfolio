@@ -218,6 +218,22 @@ ul.horizontal-list li:not(:last-child) {
     border-radius: 50%;
     margin: 0.5vw;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease;
+}
+
+.mac-btn i {
+    font-size: 0.8vw;
+    color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.mac-btn:hover i {
+    opacity: 1;
 }
 
 .close-btn {
@@ -232,23 +248,6 @@ ul.horizontal-list li:not(:last-child) {
     background: #00CD4E;
 }
 
-.navMenu {
-    margin: 0.5vw;
-    margin-bottom: 0;
-}
-
-.navMenu a {
-    font-size: 2.5vw;
-    margin: 0.1rem;
-    margin-bottom: 0;
-    float: left;
-    padding: 10px 15px;
-    border: 1px solid #fff;
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
-    margin-right: 1px;
-}
-
 .salutationContainer {
     display: grid;
     place-items: center;
@@ -258,6 +257,41 @@ ul.horizontal-list li:not(:last-child) {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+/* Terminal Navigation */
+.terminal-nav {
+    font-size: 1.5rem;
+    text-align: left;
+    align-self: start;
+    width: 80%;
+}
+
+.command-line {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.prompt-text {
+    color: #01FF00;
+    font-weight: 600;
+}
+
+.continuation-prompt {
+    color: #01FF00;
+    font-weight: 600;
+}
+
+.command {
+    color: #ffffff;
+}
+
+.command.clickable {
+    cursor: pointer;
+}
+
+.command.clickable:hover {
+    color: #01FF00;
 }
 
 .profileContainer {
@@ -358,18 +392,18 @@ img.grayscale:hover {
 }
 
 .contactUsForm {
-    font-size: 2vw;
+    font-size: 1.2rem;
 }
 
 input,
 textarea {
     width: 100%;
-    padding: 1.2vh;
+    padding: 0.75rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     box-sizing: border-box;
-    margin-top: 1vh;
-    margin-bottom: 2vh;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
     resize: vertical;
     outline: none;
 }
@@ -389,7 +423,7 @@ input[type=submit] {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     letter-spacing: 2px;
     cursor: pointer;
-    padding: 2vh;
+    padding: 1rem;
     width: 40%;
 }
 
@@ -421,6 +455,7 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 768px) {
+
     .profileContainer,
     .project {
         flex-direction: column;
@@ -433,13 +468,51 @@ input[type=submit]:hover {
 
     /* Adjust button size and font size for smaller screens */
     input[type="submit"] {
-        padding: 8px 16px; /* Adjust padding for smaller screens */
-        font-size: 14px; /* Adjust font size for smaller screens */
-      }
+        padding: 0.5rem 1rem;
+        /* Adjust padding for smaller screens */
+        font-size: 0.875rem;
+        /* Adjust font size for smaller screens */
+    }
+
+    .terminal-nav {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .continuation-prompt {
+        margin-left: 0;
+    }
+
+    .mac-btn i {
+        font-size: 0.6rem;
+    }
+
+    .header {
+        padding: 0.3rem 0;
+    }
+
+    .navBtns {
+        margin: 0.5rem;
+    }
+
+    .mac-btn {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: 0.25rem;
+    }
+
+    .container {
+        padding-top: 3rem;
+    }
 }
 
 /* For Mobile Portrait View */
-@media screen and (max-width: 480px) and (orientation: portrait) {}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    .terminal-nav {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+    }
+}
 
 /* For Mobile Landscape View */
 @media screen and (max-width: 640px) and (orientation: landscape) {}
@@ -449,30 +522,36 @@ input[type=submit]:hover {
     .font-2 {
         font-size: 3vw;
     }
+
     .font-3 {
         font-size: 4vw;
     }
+
     .font-4 {
         font-size: 5vw;
     }
+
     .profilePic {
         height: 30vw;
         width: 30vw;
     }
+
     .skillsContainer {
         gap: 5vw;
         margin: 2rem;
     }
+
     .laptop-mockup {
         width: 50vw;
     }
+
     .contactUs {
         width: 70%;
     }
+
     .contactUsForm {
-        font-size: 3vw;
+        font-size: 1rem;
     }
 }
 
 /* Default styles for the submit button */
-  
