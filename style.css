@@ -5,9 +5,34 @@
     cursor: default;
 }
 
+/* Centered terminal title inside header */
+.terminal-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.terminal-title .shell {
+    opacity: 0.85;
+}
+
+.terminal-title .window-size {
+    opacity: 0.6;
+}
+
 body {
     background: #000;
     color: #fff;
+}
+
+:root {
+    --header-h: 5rem;
 }
 
 .green {
@@ -34,37 +59,21 @@ body {
     margin: 0 5vw;
 }
 
-.font-2 {
-    font-size: 2vw;
-}
+/* Fluid typography utilities using clamp() */
+.font-2 { font-size: clamp(0.95rem, 0.85rem + 0.40vw, 1.20rem); }
+.font-3 { font-size: clamp(1.10rem, 0.95rem + 0.70vw, 1.50rem); }
+.font-4 { font-size: clamp(1.25rem, 1.05rem + 1.00vw, 1.90rem); }
+.font-5 { font-size: clamp(1.50rem, 1.20rem + 1.40vw, 2.40rem); }
+.font-6 { font-size: clamp(1.75rem, 1.35rem + 1.90vw, 3.00rem); }
+.font-7 { font-size: clamp(2.00rem, 1.50rem + 2.40vw, 3.60rem); }
+.font-8 { font-size: clamp(2.40rem, 1.80rem + 3.00vw, 4.40rem); }
+.font-10 { font-size: clamp(3.00rem, 2.20rem + 4.20vw, 5.50rem); }
 
-.font-3 {
-    font-size: 3vw;
-}
-
-.font-4 {
-    font-size: 4vw;
-}
-
-.font-5 {
-    font-size: 5vw;
-}
-
-.font-6 {
-    font-size: 6vw;
-}
-
-.font-7 {
-    font-size: 7vw;
-}
-
-.font-8 {
-    font-size: 8vw;
-}
-
-.font-10 {
-    font-size: 10vw;
-}
+/* Semantic heading defaults (overridable by .font-* classes) */
+h1 { font-size: clamp(2.00rem, 1.60rem + 2.50vw, 4.00rem); line-height: 1.15; }
+h2 { font-size: clamp(1.60rem, 1.30rem + 1.80vw, 3.00rem); line-height: 1.2; }
+h3 { font-size: clamp(1.30rem, 1.10rem + 1.20vw, 2.20rem); line-height: 1.25; }
+h4 { font-size: clamp(1.10rem, 0.95rem + 0.80vw, 1.60rem); line-height: 1.3; }
 
 .flex {
     display: flex;
@@ -86,12 +95,16 @@ body {
 .container {
     overflow: auto;
     scroll-snap-type: y mandatory;
-    height: 100vh;
+    height: calc(100vh - var(--header-h));
+    margin-top: var(--header-h);
+    overflow-x: hidden;
+    /* ensure scrollToView accounts for sticky terminal-nav */
+    scroll-padding-top: 3rem;
 }
 
 section {
     scroll-snap-align: start;
-    height: 100vh;
+    height: calc(100vh - var(--header-h));
 }
 
 a {
@@ -194,15 +207,11 @@ ul.horizontal-list li:not(:last-child) {
     width: 100%;
     position: fixed;
     top: 0;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
     z-index: 999;
     backdrop-filter: blur(10px);
     box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
     background: #36454f;
     position: fixed;
-    z-index: 1001;
-    /* Ensure header is above control center */
 }
 
 .navBtns {
@@ -248,6 +257,65 @@ ul.horizontal-list li:not(:last-child) {
     background: #00CD4E;
 }
 
+/* Sticky terminal navbar under fixed header */
+.terminal-nav {
+    position: sticky;
+    top: 0;
+    /* top of the scrollable .container (already below header) */
+    z-index: 1000;
+    /* below header (1001), above content */
+    background: #000;
+    /* solid to avoid content showing through */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
+    font-size: clamp(0.90rem, 0.80rem + 0.30vw, 1.05rem);
+}
+
+.terminal-nav .command-line {
+    margin: 0;
+    /* avoid extra spacing in the bar */
+}
+
+.terminal-nav .ls-output {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 2rem;
+    /* terminal-like columns */
+    align-items: center;
+    padding: 0 1rem;
+    font-size: inherit;
+}
+
+.ls-item {
+    cursor: pointer;
+}
+
+.ls-item.dir {
+    color: #4ea1ff;
+    font-weight: 600;
+}
+
+/* directory look */
+.ls-item.file {
+    color: #e5e5e5;
+}
+
+.ls-item:hover {
+    color: #01ff00;
+}
+
+/* Safety: prevent horizontal overflow */
+.container {
+    overflow-x: hidden;
+}
+
+img,
+video,
+canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 .salutationContainer {
     display: grid;
     place-items: center;
@@ -259,31 +327,25 @@ ul.horizontal-list li:not(:last-child) {
     align-items: center;
 }
 
-/* Terminal Navigation */
-.terminal-nav {
-    font-size: 1.5rem;
-    text-align: left;
-    align-self: start;
-    width: 80%;
-}
-
 .command-line {
-    display: block;
-    margin: 0.5rem 0;
+    position: sticky;
+    top: var(--nav-h, 0);
+    z-index: 900;
+    padding: 0.5rem 1rem;
+    background: #000;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
+    font-size: clamp(0.95rem, 0.85rem + 0.35vw, 1.10rem);
 }
 
-.prompt-text {
+.prompt {
     color: #01FF00;
     font-weight: 600;
-}
-
-.continuation-prompt {
-    color: #01FF00;
-    font-weight: 600;
+    font-size: inherit;
 }
 
 .command {
     color: #ffffff;
+    font-size: inherit;
 }
 
 .command.clickable {
@@ -300,9 +362,7 @@ ul.horizontal-list li:not(:last-child) {
     justify-content: center;
 }
 
-.nameContainer {
-    font-size: 10vw;
-}
+/* Let headings control size; avoid container font scaling */
 
 .profilePic {
     height: 20vw;
@@ -328,7 +388,8 @@ img.grayscale:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 10rem;
 }
 
 .jobTitleContainer {
@@ -474,11 +535,6 @@ input[type=submit]:hover {
         /* Adjust font size for smaller screens */
     }
 
-    .terminal-nav {
-        font-size: 1rem;
-        margin-top: 1.5rem;
-    }
-
     .continuation-prompt {
         margin-left: 0;
     }
@@ -502,34 +558,20 @@ input[type=submit]:hover {
     }
 
     .container {
-        padding-top: 3rem;
+        height: calc(100vh - var(--header-h));
+        margin-top: var(--header-h);
     }
 }
 
 /* For Mobile Portrait View */
-@media screen and (max-width: 480px) and (orientation: portrait) {
-    .terminal-nav {
-        font-size: 0.9rem;
-        margin-top: 1rem;
-    }
-}
+@media screen and (max-width: 480px) and (orientation: portrait) {}
 
 /* For Mobile Landscape View */
 @media screen and (max-width: 640px) and (orientation: landscape) {}
 
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-width: 640px) {
-    .font-2 {
-        font-size: 3vw;
-    }
-
-    .font-3 {
-        font-size: 4vw;
-    }
-
-    .font-4 {
-        font-size: 5vw;
-    }
+    /* Fluid clamp() already handles small screens; no overrides needed */
 
     .profilePic {
         height: 30vw;
