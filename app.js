@@ -17,60 +17,6 @@ ELs_inViewport.forEach(EL => {
     Obs.observe(EL, obsOptions);
 });
 
-// Trigger toggleControlCenter function on window resize (guarded)
-window.addEventListener('resize', function () {
-    try { toggleControlCenter(); } catch (_) { /* noop */ }
-});
-
-// Function to toggle control center visibility
-function toggleControlCenter() {
-    var controlCenter = document.getElementById("control-center");
-    var headerHeight = document.querySelector("header").offsetHeight;
-
-    if (!controlCenter) return; // nothing to toggle if element is missing
-
-    if (controlCenter.style.top === headerHeight + "px") {
-        // Close the control center
-        controlCenter.style.top = "-100%";
-        controlCenter.style.height = "auto"; // Reset height to auto
-    } else {
-        // Open the control center
-        controlCenter.style.top = headerHeight + "px"; // Position below header
-        controlCenter.style.height = "calc(70% - " + headerHeight + "px)"; // Adjust height as needed
-    }
-}
-
-function updateTimer() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    const time = `${hours}:${minutes}:${seconds}`;
-    const timerEl = document.getElementById('timer');
-    if (timerEl) timerEl.textContent = time;
-}
-
-// Update timer every second
-setInterval(updateTimer, 1000);
-
-// Call updateTimer once immediately to display the initial time
-updateTimer();
-
-// Get the slider and value span elements (optional)
-const slider = document.getElementById('brightness-slider');
-const sliderValue = document.getElementById('brightness-value');
-
-if (slider) {
-    // Add an event listener to update the displayed value when slider value changes
-    slider.addEventListener('input', () => {
-        const value = slider.value;
-        const gradient = `linear-gradient(to right, #01FF00 0%, #01FF00 ${value}%, #ddd ${value}%, #ddd 100%)`;
-        slider.style.background = gradient;
-        document.documentElement.style.filter = `brightness(${value}%)`;
-        if (sliderValue) sliderValue.textContent = `${value}%`;
-    });
-}
-
 // Update terminal window size in header based on container viewport
 function updateWindowSizeLabel() {
     const el = document.getElementById('window-size');
