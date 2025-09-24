@@ -18,15 +18,9 @@
 <body>
     <header class="header">
         <div class="navBtns">
-            <div class="mac-btn close-btn">
-                <i class="fas fa-times"></i>
-            </div>
-            <div class="mac-btn min-btn">
-                <i class="fas fa-minus"></i>
-            </div>
-            <div class="mac-btn max-btn">
-                <i class="fas fa-expand-alt"></i>
-            </div>
+            <div class="mac-btn close-btn"><i class="fas fa-times"></i></div>
+            <div class="mac-btn min-btn"><i class="fas fa-minus"></i></div>
+            <div class="mac-btn max-btn"><i class="fas fa-expand-alt"></i></div>
         </div>
         <div class="terminal-title">
             <i class="fas fa-folder-open"></i>
@@ -49,38 +43,21 @@
                 <span class="ls-item dir" onclick="scrollToView('.jobDescriptionContainer')">experience/</span>
                 <span class="ls-item dir" onclick="scrollToView('.profileContainer')">about/</span>
                 <span class="ls-item dir" onclick="scrollToView('.contactContainer')">contact/</span>
-                <span class="ls-item file" onclick="window.location.href='blog.html'">blog.md</span>
-            </div>
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">echo 'Hello, World!'</span>
             </div>
         </div>
+        <!-- Global command-line that will update based on the section in view -->
+        <div id="section-command" class="command-line" aria-live="polite">
+            <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
+            <span class="command">echo 'Hello, World!'</span>
+        </div>
 
-        <section class="salutationContainer">
+        <section class="salutationContainer" data-command="echo 'Hello, World!'">
             <div class="salutationText green">
                 <h1 class="font-10" data-inviewport="salutation-typing">Hello, World!</h1>
             </div>
         </section>
 
-        <div class="terminal-nav">
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">ls</span>
-            </div>
-            <div class="ls-output">
-                <span class="ls-item dir" onclick="scrollToView('.projectDetails')">work/</span>
-                <span class="ls-item dir" onclick="scrollToView('.jobDescriptionContainer')">experience/</span>
-                <span class="ls-item dir" onclick="scrollToView('.profileContainer')">about/</span>
-                <span class="ls-item dir" onclick="scrollToView('.contactContainer')">contact/</span>
-                <span class="ls-item file" onclick="window.location.href='blog.html'">blog.md</span>
-            </div>
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">cat about/README.md</span>
-            </div>
-        </div>
-        <section class="profileContainer">
+        <section class="profileContainer" data-command="cat about/README.md">
             <div class="nameContainer reveal fade-left mg-4">
                 <h1 class="font-8">I'm Pankaj</h1>
                 <h2 class="font-3 green" data-inviewport="intro-typing">I build things for the web.</h2>
@@ -92,24 +69,7 @@
             </div>
         </section>
 
-        <div class="terminal-nav">
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">ls</span>
-            </div>
-            <div class="ls-output">
-                <span class="ls-item dir" onclick="scrollToView('.projectDetails')">work/</span>
-                <span class="ls-item dir" onclick="scrollToView('.jobDescriptionContainer')">experience/</span>
-                <span class="ls-item dir" onclick="scrollToView('.profileContainer')">about/</span>
-                <span class="ls-item dir" onclick="scrollToView('.contactContainer')">contact/</span>
-                <span class="ls-item file" onclick="window.location.href='blog.html'">blog.md</span>
-            </div>
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">cat experience/profile.txt</span>
-            </div>
-        </div>
-        <section class="jobDescriptionContainer">
+        <section class="jobDescriptionContainer" data-command="cat experience/profile.txt">
             <div class="jobTitleContainer">
                 <h1 class="font-5">I'm a Fullstack Developer</h1>
                 <h2 class="font-2 green" data-inviewport="from-typing">based in New Delhi, India</h2>
@@ -117,43 +77,16 @@
             <div class="skillsContainer">
                 <h2 class="font-3">With 7+ years of experience in Web Development</h2>
                 <div class="skills">
-                    <div class="card" href="https://angular.io/">
-                        <img src="./src/images/angular.png" alt="Angular" class="skill-img">
-                    </div>
-                    <div class="card" href="https://react.dev/">
-                        <img src="./src/images/react.png" alt="React" class="skill-img">
-                    </div>
-                    <div class="card" href="https://nodejs.org/en">
-                        <img src="./src/images/node-js.png" alt="Node" class="skill-img">
-                    </div>
-                    <div class="card" href="https://expressjs.com/">
-                        <img src="./src/images/express.png" alt="Express" class="skill-img">
-                    </div>
-                    <a class="card" href="https://www.mongodb.com/">
-                        <img src="./src/images/mongodb.png" alt="Mongodb" class="skill-img">
-                    </a>
+                    <div class="card" href="https://angular.io/"><img src="./src/images/angular.png" alt="Angular" class="skill-img"></div>
+                    <div class="card" href="https://react.dev/"><img src="./src/images/react.png" alt="React" class="skill-img"></div>
+                    <div class="card" href="https://nodejs.org/en"><img src="./src/images/node-js.png" alt="Node" class="skill-img"></div>
+                    <div class="card" href="https://expressjs.com/"><img src="./src/images/express.png" alt="Express" class="skill-img"></div>
+                    <a class="card" href="https://www.mongodb.com/"><img src="./src/images/mongodb.png" alt="Mongodb" class="skill-img"></a>
                 </div>
             </div>
         </section>
 
-        <div class="terminal-nav">
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">ls</span>
-            </div>
-            <div class="ls-output">
-                <span class="ls-item dir" onclick="scrollToView('.projectDetails')">work/</span>
-                <span class="ls-item dir" onclick="scrollToView('.jobDescriptionContainer')">experience/</span>
-                <span class="ls-item dir" onclick="scrollToView('.profileContainer')">about/</span>
-                <span class="ls-item dir" onclick="scrollToView('.contactContainer')">contact/</span>
-                <span class="ls-item file" onclick="window.location.href='blog.html'">blog.md</span>
-            </div>
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">cd work && cat budget-manager/README.md</span>
-            </div>
-        </div>
-        <section class="projectDetails">
+        <section class="projectDetails" data-command="cd work && cat budget-manager/README.md">
             <h1 class="font-3 heading-text green mg-lr5" data-inviewport="project-typing">Here are some things I've built...</h1>
             <div class="project">
                 <div class="projectDesc">
@@ -164,15 +97,10 @@
                         </h2>
                     </div>
                     <div class="card-1 mg-t1">
-                        <div class="font-2">
-                            A web app to manage your finances in simplest way
-                        </div>
+                        <div class="font-2">A web app to manage your finances in simplest way</div>
                         <div class="mg-t1">
                             <ul class="horizontal-list font-2 green">
-                                <li>Angular</li>
-                                <li>Node</li>
-                                <li>Express</li>
-                                <li>Mongodb</li>
+                                <li>Angular</li><li>Node</li><li>Express</li><li>Mongodb</li>
                             </ul>
                         </div>
                     </div>
@@ -183,24 +111,7 @@
             </div>
         </section>
 
-        <div class="terminal-nav">
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">ls</span>
-            </div>
-            <div class="ls-output">
-                <span class="ls-item dir" onclick="scrollToView('.projectDetails')">work/</span>
-                <span class="ls-item dir" onclick="scrollToView('.jobDescriptionContainer')">experience/</span>
-                <span class="ls-item dir" onclick="scrollToView('.profileContainer')">about/</span>
-                <span class="ls-item dir" onclick="scrollToView('.contactContainer')">contact/</span>
-                <span class="ls-item file" onclick="window.location.href='blog.html'">blog.md</span>
-            </div>
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">cd work && cat textme/README.md</span>
-            </div>
-        </div>
-        <section class="projectDetails">
+        <section class="projectDetails" data-command="cd work && cat textme/README.md">
             <div class="project">
                 <div class="projectDesc">
                     <div class="font-3">
@@ -210,15 +121,10 @@
                         </h2>
                     </div>
                     <div class="card-1 mg-t1">
-                        <div class="font-2">
-                            A web app to chat with your friends
-                        </div>
+                        <div class="font-2">A web app to chat with your friends</div>
                         <div class="mg-t1">
                             <ul class="horizontal-list font-2 green">
-                                <li>React</li>
-                                <li>Node</li>
-                                <li>Express</li>
-                                <li>Mongodb</li>
+                                <li>React</li><li>Node</li><li>Express</li><li>Mongodb</li>
                             </ul>
                         </div>
                     </div>
@@ -229,24 +135,7 @@
             </div>
         </section>
 
-        <div class="terminal-nav">
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">ls</span>
-            </div>
-            <div class="ls-output">
-                <span class="ls-item dir" onclick="scrollToView('.projectDetails')">work/</span>
-                <span class="ls-item dir" onclick="scrollToView('.jobDescriptionContainer')">experience/</span>
-                <span class="ls-item dir" onclick="scrollToView('.profileContainer')">about/</span>
-                <span class="ls-item dir" onclick="scrollToView('.contactContainer')">contact/</span>
-                <span class="ls-item file" onclick="window.location.href='blog.html'">blog.md</span>
-            </div>
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">cd work && cat todo-list/README.md</span>
-            </div>
-        </div>
-        <section class="projectDetails">
+        <section class="projectDetails" data-command="cd work && cat todo-list/README.md">
             <div class="project">
                 <div class="projectDesc">
                     <div class="font-3">
@@ -256,15 +145,10 @@
                         </h2>
                     </div>
                     <div class="card-1 mg-t1">
-                        <div class="font-2">
-                            A web app to create tasks and organize your life
-                        </div>
+                        <div class="font-2">A web app to create tasks and organize your life</div>
                         <div class="mg-t1">
                             <ul class="horizontal-list font-2 green">
-                                <li>Angular</li>
-                                <li>Node</li>
-                                <li>Express</li>
-                                <li>Mongodb</li>
+                                <li>Angular</li><li>Node</li><li>Express</li><li>Mongodb</li>
                             </ul>
                         </div>
                     </div>
@@ -275,25 +159,7 @@
             </div>
         </section>
 
-        <div class="terminal-nav">
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">ls</span>
-            </div>
-            <div class="ls-output">
-                <span class="ls-item dir" onclick="scrollToView('.projectDetails')">work/</span>
-                <span class="ls-item dir" onclick="scrollToView('.jobDescriptionContainer')">experience/</span>
-                <span class="ls-item dir" onclick="scrollToView('.profileContainer')">about/</span>
-                <span class="ls-item dir" onclick="scrollToView('.contactContainer')">contact/</span>
-                <span class="ls-item file" onclick="window.location.href='blog.html'">blog.md</span>
-            </div>
-            <div class="command-line">
-                <span class="prompt">pankaj@MacBook-Pro:~/portfolio$</span>
-                <span class="command">cd contact && cat contact-form.html</span>
-            </div>
-        </div>
-
-        <section class="contactContainer">
+        <section class="contactContainer" data-command="cd contact && cat contact-form.html">
             <div class="contactText heading-text">
                 <h1 class="font-4">Get In Touch</h1>
             </div>

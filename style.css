@@ -7,15 +7,13 @@
 
 /* Centered terminal title inside header */
 .terminal-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     gap: 0.5rem;
     color: #fff;
     font-weight: 600;
+    margin: 0 auto;
+    width: 450px
 }
 
 .terminal-title .shell {
@@ -99,7 +97,7 @@ h4 { font-size: clamp(1.10rem, 0.95rem + 0.80vw, 1.60rem); line-height: 1.3; }
     margin-top: var(--header-h);
     overflow-x: hidden;
     /* ensure scrollToView accounts for sticky terminal-nav */
-    scroll-padding-top: 3rem;
+    scroll-padding-top: var(--nav-h, 3rem);
 }
 
 section {
@@ -261,28 +259,30 @@ ul.horizontal-list li:not(:last-child) {
 .terminal-nav {
     position: sticky;
     top: 0;
-    /* top of the scrollable .container (already below header) */
-    z-index: 1000;
-    /* below header (1001), above content */
-    background: #000;
-    /* solid to avoid content showing through */
-    /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
+    z-index: 1000; /* below header (1001), above content */
+    background: #000; /* solid to avoid content showing through */
     font-size: clamp(0.90rem, 0.80rem + 0.30vw, 1.05rem);
+    display: flex;
+    flex-direction: column; /* stack prompt and ls row */
 }
 
 .terminal-nav .command-line {
-    margin: 0;
-    /* avoid extra spacing in the bar */
+    margin: 0; /* avoid extra spacing in the bar */
+    position: static;   /* do NOT inherit global sticky */
+    top: auto;
+    z-index: auto;
 }
 
 .terminal-nav .ls-output {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.75rem 2rem;
     /* terminal-like columns */
     align-items: center;
-    padding: 0 1rem;
+    padding: 0.25rem 1rem 0.5rem;
     font-size: inherit;
+    overflow-x: auto;
+    white-space: nowrap; /* keep items on one line; allow horizontal scroll */
 }
 
 .ls-item {
@@ -301,6 +301,12 @@ ul.horizontal-list li:not(:last-child) {
 
 .ls-item:hover {
     color: #01ff00;
+}
+
+/* Active directory highlight in ls-output */
+.ls-item.active {
+    color: #01FF00;
+    font-weight: 700;
 }
 
 /* Safety: prevent horizontal overflow */
@@ -329,13 +335,17 @@ canvas {
 
 .command-line {
     position: sticky;
-    top: var(--nav-h, 0);
+    top: var(--nav-h, 3rem);
     z-index: 900;
-    padding: 0.5rem 1rem;
+    padding: 0.9rem 1rem;
     background: #000;
     /* border-bottom: 1px solid rgba(255, 255, 255, 0.08); */
-    font-size: clamp(0.95rem, 0.85rem + 0.35vw, 1.10rem);
+    font-size: clamp(0.1rem, 0.85rem + 0.35vw, 1.10rem);
 }
+
+/* Avoid initial overlap flash: hide until nav height is measured */
+#section-command { visibility: hidden; }
+#section-command.is-ready { visibility: visible; }
 
 .prompt {
     color: #01FF00;
